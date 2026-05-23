@@ -9,9 +9,9 @@ const QUICK_LINKS = [
 
 const SERVICE_LINKS = [
   "Residential Design",
-  "Commercial Spaces",
-  "Sustainable Design",
-  "Design Consultation",
+  "Commercial & Office Design",
+  "Retail & Flagship Stores",
+  "Project Management",
 ];
 
 export default function Footer() {
@@ -27,8 +27,8 @@ export default function Footer() {
               hara<span className="text-accent">works</span>
             </p>
             <p className="mt-3 max-w-[34ch] text-sm leading-[1.6] text-muted">
-              An interior design studio shaping calm, durable spaces for homes
-              and workplaces.
+              Interior design &amp; renovation in Kuala Lumpur — crafting spaces
+              for success across the Klang Valley.
             </p>
           </div>
 
@@ -69,36 +69,32 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-semibold text-ink">Contact</h3>
-            {/* TODO: replace with real contact details and profiles */}
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li>
                 <a
-                  href="mailto:hello@haraworks.com"
+                  href="mailto:haraworks.kl@gmail.com"
                   className="transition-colors hover:text-ink"
                 >
-                  hello@haraworks.com
+                  haraworks.kl@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+13128471928"
+                  href="tel:+60179656504"
                   className="transition-colors hover:text-ink"
                 >
-                  +1 (312) 847-1928
+                  +60 17-9656504
                 </a>
               </li>
-              <li className="flex gap-4 pt-1">
+              <li>Kuala Lumpur, Malaysia</li>
+              <li className="pt-1">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/haraworks.kl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-ink"
                 >
-                  Instagram
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  className="transition-colors hover:text-ink"
-                >
-                  LinkedIn
+                  Instagram @haraworks.kl
                 </a>
               </li>
             </ul>

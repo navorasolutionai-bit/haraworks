@@ -3,13 +3,13 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
-  title: "haraworks — Interior Design Studio",
+  title: "Haraworks — Interior Design & Renovation, Kuala Lumpur",
   description:
-    "haraworks is an interior design studio shaping calm, considered spaces for homes and workplaces.",
+    "Haraworks is an interior design and renovation studio in Kuala Lumpur, designing residential, commercial, and retail spaces across the Klang Valley and beyond.",
   openGraph: {
-    title: "haraworks — Interior Design Studio",
+    title: "Haraworks — Interior Design & Renovation, Kuala Lumpur",
     description:
-      "An interior design studio shaping calm, considered spaces for homes and workplaces.",
+      "Interior design and renovation for homes, offices, and retail across the Klang Valley.",
     type: "website",
   },
 };

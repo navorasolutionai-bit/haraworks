@@ -10,20 +10,19 @@ export default function CTA() {
             Have a space in mind?
           </h2>
           <p className="mx-auto mt-5 max-w-[52ch] text-[1.0625rem] leading-[1.6] text-muted">
-            Tell us what you&apos;re working with and what you want it to feel
-            like — we&apos;ll take it from there.
+            Tell us about your project and we&apos;ll get back to you with a free
+            consultation and a no-obligation quotation.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {/* TODO: replace with your real booking link or contact email */}
-            <Button href="mailto:hello@haraworks.com">
-              Schedule a consultation
+            <Button href="mailto:haraworks.kl@gmail.com">
+              Request a free quotation
             </Button>
             <a
-              href="#work"
+              href="tel:+60179656504"
               className="text-sm font-medium text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"
             >
-              See the work first
+              Or call +60 17-9656504
             </a>
           </div>
         </div>

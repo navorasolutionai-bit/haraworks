@@ -16,22 +16,43 @@ export default function About() {
           </h2>
           <div className="mt-6 space-y-4 text-[1.0625rem] leading-[1.65] text-muted">
             <p className="max-w-[60ch]">
-              haraworks started as a small practice with one habit: spend more
-              time understanding how a space will be lived in than drawing how it
-              looks. That order matters. The good rooms come from the answers,
-              not the mood board.
+              Haraworks is an interior design and renovation studio based in
+              Kuala Lumpur, with more than ten years of experience across
+              residential, commercial, and retail spaces throughout the Klang
+              Valley and beyond.
             </p>
             <p className="max-w-[60ch]">
-              We work in close, slow collaboration — a handful of projects at a
-              time so each one gets real attention. The result tends to be quiet
-              rather than loud, and it holds up after the furniture is in and the
-              photographer has gone home.
+              Our approach blends contemporary design with practical solutions —
+              every project reflects the client&apos;s vision while respecting
+              structure, timeline, and budget. We also collaborate with partners
+              like Creativ5 Design Studio to bring each space to life.
             </p>
           </div>
 
-          {/* TODO: replace with real founder / studio attribution */}
+          {/* Design styles we work in */}
+          <div className="mt-8">
+            <p className="text-sm font-semibold text-ink">Styles we work in</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {[
+                "Contemporary",
+                "Korean Minimalist",
+                "Industrial-Vintage",
+                "Classic-Modern",
+                "Arabian & Eastern",
+                "Bespoke Custom",
+              ].map((style) => (
+                <li
+                  key={style}
+                  className="rounded-full border border-line bg-canvas px-3 py-1.5 text-sm text-muted"
+                >
+                  {style}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <p className="mt-8 text-sm text-muted">
-            <span className="text-ink">[Founder Name]</span>, Principal Designer
+            <span className="text-ink">Haraworks</span> · Kuala Lumpur, Malaysia
           </p>
         </Reveal>
 

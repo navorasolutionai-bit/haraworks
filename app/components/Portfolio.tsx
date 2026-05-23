@@ -2,35 +2,53 @@ import Image from "next/image";
 import Section from "./shared/Section";
 import Reveal from "./shared/Reveal";
 
-/* TODO: replace these placeholder projects with real case studies + photography */
+/*
+ * Real Haraworks projects.
+ * NOTE: images use picsum placeholders — swap each `seed` URL for real
+ * project photography (available on Instagram @haraworks.kl).
+ */
 const PROJECTS = [
   {
-    seed: "haraworks-lantern",
-    title: "Lantern House",
+    seed: "haraworks-it-office",
+    title: "IT Office Renovation",
+    client: "Professional business services",
+    scope: "Contemporary office with industrial steel works",
+    meta: "Commercial · Tamarind Square, Cyberjaya · 8 weeks",
+  },
+  {
+    seed: "haraworks-fathiya",
+    title: "Fathiya Hijab Flagship Store",
+    client: "Fathiya Hijab",
+    scope: "Industrial-vintage retail flagship & showcase layout",
+    meta: "Retail · Tamarind Square, Cyberjaya",
+  },
+  {
+    seed: "haraworks-korean-kitchen",
+    title: "Korean Minimalist Kitchen",
     client: "Private residence",
-    scope: "Full interior architecture & furnishing",
-    meta: "Hillside home · 2024",
+    scope: "Clean lines, smart storage, premium finishes",
+    meta: "Residential · Brickfields, Kuala Lumpur",
   },
   {
-    seed: "haraworks-atlas",
-    title: "Atlas Studio",
-    client: "Creative agency",
-    scope: "Workplace design for 40 people",
-    meta: "Commercial fit-out · 2023",
+    seed: "haraworks-sahara",
+    title: "Contemporary Sahara Interior",
+    client: "Private residence",
+    scope: "Warm, soothing interior with contemporary Eastern accents",
+    meta: "Residential · Taman Bukit Maluri, Kepong",
   },
   {
-    seed: "haraworks-reed",
-    title: "The Reed Apartment",
-    client: "City apartment",
-    scope: "Renovation & space planning",
-    meta: "Residential · 2023",
+    seed: "haraworks-english-grace",
+    title: "English Grace Modern",
+    client: "Private residence",
+    scope: "Monochrome palette with warm beige, classic-modern fusion",
+    meta: "Residential · Vista Kirana, Malacca",
   },
   {
-    seed: "haraworks-greenhouse",
-    title: "Greenhouse Café",
-    client: "Independent café",
-    scope: "Concept, materials & build direction",
-    meta: "Hospitality · 2022",
+    seed: "haraworks-3td",
+    title: "Interior Renovation — 3TD Solutions",
+    client: "3TD Solutions Sdn Bhd",
+    scope: "Complete interior design & renovation for a business space",
+    meta: "Commercial · Tamarind Square, Cyberjaya",
   },
 ];
 

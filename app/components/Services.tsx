@@ -6,22 +6,32 @@ const SERVICES = [
   {
     title: "Residential Design",
     description:
-      "Homes designed end to end — layout, light, materials, and the furniture that ties them together.",
+      "Homes and kitchens designed and renovated end to end — layout, light, storage, and finishes.",
   },
   {
-    title: "Commercial Spaces",
+    title: "Commercial & Office Design",
     description:
-      "Offices, studios, and shops planned around how teams and customers actually move through a day.",
+      "Workplaces planned for productivity, with the construction and steel works to match.",
   },
   {
-    title: "Sustainable Design",
+    title: "Retail & Flagship Stores",
     description:
-      "Material choices and detailing that favour longevity, repair, and lower-impact sourcing.",
+      "Retail spaces designed to showcase products and guide customers through a considered flow.",
   },
   {
-    title: "Design Consultation",
+    title: "Interior Styling",
     description:
-      "A focused session to set direction, resolve a difficult room, or pressure-test plans you already have.",
+      "Colour schemes, furniture selection, and finishing touches that bring a design to life.",
+  },
+  {
+    title: "Project Management",
+    description:
+      "End-to-end oversight — timelines, budgets, contractor coordination, and quality inspections.",
+  },
+  {
+    title: "Consultation & Quotation",
+    description:
+      "A free initial consultation and no-obligation quotation to set direction for your project.",
   },
 ];
 

@@ -22,16 +22,16 @@ export default function Hero() {
         {/* Text */}
         <div className="lg:col-span-6 lg:pr-6">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-            Interior design studio
+            Interior design &amp; renovation
           </p>
           <h1 className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-ink">
             Considered interiors,
             <br className="hidden sm:block" /> built to live in.
           </h1>
           <p className="mt-6 max-w-[60ch] text-[1.0625rem] leading-[1.65] text-muted">
-            haraworks is a studio designing calm, durable spaces for homes and
-            workplaces — each one shaped around the people who use it, down to
-            the last detail.
+            Haraworks is a Kuala Lumpur studio designing and renovating homes,
+            offices, and retail spaces — blending contemporary design with
+            practical solutions, on time and on budget.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -41,10 +41,27 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* TODO: replace with real practice details */}
-          <p className="mt-10 text-sm text-muted">
-            Based in <span className="text-ink">[Your City]</span> · Residential
-            &amp; commercial projects worldwide
+          {/* Real practice stats */}
+          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
+            {[
+              { value: "10+", label: "Years experience" },
+              { value: "15+", label: "Projects completed" },
+              { value: "6+", label: "Design styles" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <dt className="font-display text-3xl font-bold tracking-tight text-ink">
+                  {stat.value}
+                </dt>
+                <dd className="mt-1 text-sm leading-snug text-muted">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-8 text-sm text-muted">
+            Based in <span className="text-ink">Kuala Lumpur</span> · Serving the
+            Klang Valley &amp; Malaysia
           </p>
         </div>
 
