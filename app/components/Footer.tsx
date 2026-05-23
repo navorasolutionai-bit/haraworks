@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { label: "Work", href: "#work" },
+  { label: "Featured", href: "#featured" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Styles", href: "#styles" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -105,7 +106,7 @@ export default function Footer() {
           <p className="text-sm text-muted">
             © {year} haraworks. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link
               href="#"
               className="text-sm text-muted transition-colors hover:text-ink"
@@ -117,6 +118,12 @@ export default function Footer() {
               className="text-sm text-muted transition-colors hover:text-ink"
             >
               Terms
+            </Link>
+            <Link
+              href="#top"
+              className="text-sm font-medium text-accent underline-offset-4 hover:underline"
+            >
+              Back to top ↑
             </Link>
           </div>
         </div>

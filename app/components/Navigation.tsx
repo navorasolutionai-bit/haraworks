@@ -5,9 +5,10 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
+  { label: "Work", href: "#gallery" },
   { label: "Services", href: "#services" },
+  { label: "Styles", href: "#styles" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 

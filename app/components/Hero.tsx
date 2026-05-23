@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Button from "./shared/Button";
+import InstagramEmbed from "./InstagramEmbed";
 
 /*
  * Hero text is intentionally static (no entrance animation on page load),
@@ -35,7 +35,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="#work">Explore the work</Button>
+            <Button href="#gallery">View our latest project</Button>
             <Button href="#contact" variant="ghost">
               Book a consultation
             </Button>
@@ -65,17 +65,13 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Visual */}
+        {/* Visual — live featured Instagram post */}
         <div className="lg:col-span-6">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-ultra shadow-lift sm:aspect-[5/4] lg:aspect-[4/5]">
-            {/* TODO: replace picsum placeholder with real hero photography */}
-            <Image
-              src="https://picsum.photos/seed/haraworks-hero/1200/1500"
-              alt="A naturally lit living room with layered textures and warm wood tones"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+          <div className="mx-auto w-full max-w-md lg:ml-auto">
+            <InstagramEmbed
+              url="https://www.instagram.com/p/DRQxG1bgapM/"
+              label="Latest project"
+              title="Timeless Design — Vista Kirana"
             />
           </div>
         </div>

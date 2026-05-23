@@ -3,7 +3,7 @@ import Reveal from "./shared/Reveal";
 
 export default function CTA() {
   return (
-    <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
+    <section className="px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
       <Reveal className="mx-auto w-full max-w-5xl">
         <div className="overflow-hidden rounded-ultra bg-accent-soft px-6 py-16 text-center sm:px-12 sm:py-20">
           <h2 className="mx-auto max-w-[18ch] font-display text-[clamp(2rem,5vw,3.25rem)] font-bold leading-[1.1] tracking-tight text-ink">
@@ -15,9 +15,7 @@ export default function CTA() {
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="mailto:haraworks.kl@gmail.com">
-              Request a free quotation
-            </Button>
+            <Button href="#contact">Request a free consultation</Button>
             <a
               href="tel:+60179656504"
               className="text-sm font-medium text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"

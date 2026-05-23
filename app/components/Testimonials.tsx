@@ -19,7 +19,12 @@ const CLIENTS = [
   {
     name: "Creativ5 Design Studio",
     project: "Design collaboration",
-    note: "An ongoing design partner on co-branded residential and retail projects across the Klang Valley.",
+    note: "A design partner on co-branded residential and retail projects across the Klang Valley.",
+  },
+  {
+    name: "Nadim Design",
+    project: "Design partnership",
+    note: "A design partner on residential work in Malacca, including the Vista Kirana homes.",
   },
 ];
 
@@ -58,7 +63,7 @@ export default function Testimonials() {
         </p>
       </Reveal>
 
-      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0">
+      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0 lg:grid-cols-4">
         {CLIENTS.map((item, i) => (
           <Reveal
             key={item.name}
