@@ -1,80 +1,67 @@
 import Button from "./shared/Button";
-import InstagramEmbed from "./InstagramEmbed";
 
 /*
- * Hero text is intentionally static (no entrance animation on page load),
- * per the design spec.
+ * Hero — white dominant, Apple-style. Large black headline, clean CTAs.
+ * Instagram embed moved to Gallery section where it belongs.
  */
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-4 sm:px-6">
-      {/* Warm radial mesh background */}
+    <section id="top" className="relative overflow-hidden bg-canvas px-6 sm:px-8">
+      {/* Subtle grid texture — very faint, Apple-style */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          background:
-            "radial-gradient(60% 50% at 75% 15%, rgba(146,102,59,0.10), transparent 70%), radial-gradient(45% 40% at 10% 90%, rgba(146,102,59,0.06), transparent 70%)",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 pb-20 pt-32 sm:pt-36 lg:grid-cols-12 lg:gap-10 lg:pb-28 lg:pt-44">
-        {/* Text */}
-        <div className="lg:col-span-6 lg:pr-6">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-            Interior design &amp; renovation
-          </p>
-          <h1 className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-ink">
-            Considered interiors,
-            <br className="hidden sm:block" /> built to live in.
-          </h1>
-          <p className="mt-6 max-w-[60ch] text-[1.0625rem] leading-[1.65] text-muted">
-            Haraworks is a Kuala Lumpur studio designing and renovating homes,
-            offices, and retail spaces — blending contemporary design with
-            practical solutions, on time and on budget.
-          </p>
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-start pb-24 pt-36 sm:pt-44 lg:pb-32 lg:pt-52">
+        {/* Eyebrow */}
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          Interior design &amp; renovation · Kuala Lumpur
+        </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="#gallery">View our latest project</Button>
-            <Button href="#contact" variant="ghost">
-              Book a consultation
-            </Button>
-          </div>
+        {/* Main headline */}
+        <h1 className="mt-6 max-w-4xl font-display text-[clamp(3rem,7.5vw,6.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-ink">
+          Spaces that feel
+          <br />
+          exactly right.
+        </h1>
 
-          {/* Real practice stats */}
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
-            {[
-              { value: "10+", label: "Years experience" },
-              { value: "15+", label: "Projects completed" },
-              { value: "6+", label: "Design styles" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <dt className="font-display text-3xl font-bold tracking-tight text-ink">
-                  {stat.value}
-                </dt>
-                <dd className="mt-1 text-sm leading-snug text-muted">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+        <p className="mt-8 max-w-[52ch] text-[1.125rem] leading-[1.65] text-muted">
+          Haraworks is a Kuala Lumpur studio designing and renovating homes,
+          offices, and retail spaces — contemporary design with practical
+          solutions, on time and on budget.
+        </p>
 
-          <p className="mt-8 text-sm text-muted">
-            Based in <span className="text-ink">Kuala Lumpur</span> · Serving the
-            Klang Valley &amp; Malaysia
-          </p>
+        <div className="mt-10 flex flex-wrap items-center gap-3">
+          <Button href="#gallery">View our work</Button>
+          <Button href="#contact" variant="ghost">
+            Book a consultation
+          </Button>
         </div>
 
-        {/* Visual — live featured Instagram post */}
-        <div className="lg:col-span-6">
-          <div className="mx-auto w-full max-w-md lg:ml-auto">
-            <InstagramEmbed
-              url="https://www.instagram.com/p/DRQxG1bgapM/"
-              label="Latest project"
-              title="Timeless Design — Vista Kirana"
-            />
-          </div>
-        </div>
+        {/* Stats row */}
+        <dl className="mt-16 flex flex-wrap items-center gap-x-12 gap-y-6 border-t border-line pt-10">
+          {[
+            { value: "10+", label: "Years experience" },
+            { value: "15+", label: "Projects completed" },
+            { value: "6+", label: "Design styles" },
+            { value: "KL", label: "Based in Kuala Lumpur" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <dt className="font-display text-[2rem] font-bold tracking-[-0.03em] text-ink">
+                {stat.value}
+              </dt>
+              <dd className="mt-1 text-sm leading-snug text-muted">
+                {stat.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

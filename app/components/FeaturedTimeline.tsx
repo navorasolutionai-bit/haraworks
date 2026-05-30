@@ -1,80 +1,46 @@
-import Section from "./shared/Section";
-import Reveal from "./shared/Reveal";
-import InstagramEmbed from "./InstagramEmbed";
-import { IT_OFFICE_TIMELINE } from "@/lib/instagram-posts";
-
-const WEEK_LABELS = ["Week 1", "Week 3", "Week 8"];
-
-const STATS = [
-  { value: "8 weeks", label: "Start to handover" },
-  { value: "Cyberjaya", label: "Tamarind Square" },
-  { value: "2023", label: "May – July" },
-];
-
+/*
+ * BrandStatement — full-width black panel, single bold white statement.
+ * The one high-contrast dark section on the page.
+ */
 export default function FeaturedTimeline() {
   return (
-    <Section id="featured" className="bg-surface">
-      <Reveal className="max-w-2xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-          Featured transformation
+    <section
+      aria-label="Brand statement"
+      className="w-full bg-ink px-6 py-24 sm:px-8 sm:py-32 lg:py-40"
+    >
+      <div className="mx-auto max-w-7xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[rgba(245,245,247,0.4)]">
+          Haraworks · Kuala Lumpur
         </p>
-        <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
-          IT Office — an 8-week renovation.
+        <h2 className="mt-8 max-w-4xl font-display text-[clamp(2.25rem,5.5vw,5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-[#f5f5f7]">
+          One studio. End to end —
+          <br className="hidden sm:block" /> from the first sketch
+          <br className="hidden sm:block" /> to the final handover.
         </h2>
-        <p className="mt-4 text-[1.0625rem] leading-[1.6] text-muted">
-          Follow the build from bare site to finished workspace at Tamarind
-          Square, Cyberjaya — captured week by week.
+        <p className="mt-8 max-w-[54ch] text-[1.0625rem] leading-[1.65] text-[rgba(245,245,247,0.55)]">
+          Design, materials, contractors, and quality checks — all managed
+          in-house. One point of contact, a clear timeline, and a fixed budget
+          from day one.
         </p>
-      </Reveal>
 
-      {/* Stats */}
-      <Reveal delay={0.05}>
-        <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-3">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="bg-canvas px-6 py-6">
-              <dt className="font-display text-2xl font-bold tracking-tight text-ink">
+        {/* Stats row — white on black */}
+        <dl className="mt-14 flex flex-wrap gap-x-14 gap-y-8 border-t border-[rgba(255,255,255,0.1)] pt-10">
+          {[
+            { value: "8 wks", label: "Avg. project duration" },
+            { value: "15+", label: "Projects completed" },
+            { value: "100%", label: "In-house management" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <dt className="font-display text-[2rem] font-bold tracking-[-0.03em] text-[#f5f5f7]">
                 {stat.value}
               </dt>
-              <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
+              <dd className="mt-1 text-sm text-[rgba(245,245,247,0.45)]">
+                {stat.label}
+              </dd>
             </div>
           ))}
         </dl>
-      </Reveal>
-
-      {/* Timeline progress indicator */}
-      <Reveal delay={0.1}>
-        <div className="mt-14 flex items-center justify-between gap-2" aria-hidden="true">
-          {WEEK_LABELS.map((week, i) => (
-            <div key={week} className="flex flex-1 items-center">
-              <div className="flex flex-col items-center">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
-                  {i + 1}
-                </span>
-                <span className="mt-2 whitespace-nowrap text-xs font-medium uppercase tracking-[0.12em] text-muted">
-                  {week}
-                </span>
-              </div>
-              {i < WEEK_LABELS.length - 1 && (
-                <span className="mx-2 -mt-6 h-0.5 flex-1 rounded-full bg-accent-soft" />
-              )}
-            </div>
-          ))}
-        </div>
-      </Reveal>
-
-      {/* Week embeds */}
-      <div className="mt-10 grid gap-6 lg:grid-cols-3">
-        {IT_OFFICE_TIMELINE.map((post, i) => (
-          <Reveal key={post.id} delay={i * 0.1}>
-            <InstagramEmbed
-              url={post.url}
-              label={WEEK_LABELS[i]}
-              title={post.title.replace("IT Office — ", "")}
-              caption={`${post.date} · ${post.stats ?? ""}`}
-            />
-          </Reveal>
-        ))}
       </div>
-    </Section>
+    </section>
   );
 }

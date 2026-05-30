@@ -15,7 +15,7 @@ const DETAILS = [
 ];
 
 const inputClass =
-  "w-full rounded-lg border border-line bg-canvas px-4 py-3 text-base text-ink placeholder:text-muted focus:border-accent focus:outline-none";
+  "w-full rounded-lg border border-[rgba(0,0,0,0.15)] bg-white px-4 py-3 text-base text-ink placeholder:text-muted transition-colors focus:border-ink focus:outline-none";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -46,29 +46,29 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
+    <section id="contact" className="bg-surface px-6 py-20 sm:px-8 sm:py-24 lg:py-32">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left — intro + details */}
           <Reveal>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               Get in touch
             </p>
-            <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
               Request a free consultation.
             </h2>
-            <p className="mt-4 max-w-[52ch] text-[1.0625rem] leading-[1.6] text-muted">
+            <p className="mt-5 max-w-[50ch] text-[1.0625rem] leading-[1.65] text-muted">
               Tell us about your space and what you have in mind. We&apos;ll
               reply with a free consultation and a no-obligation quotation.
             </p>
 
-            <dl className="mt-10 space-y-5">
+            <dl className="mt-12 space-y-5">
               {DETAILS.map((item) => (
-                <div key={item.label}>
-                  <dt className="text-sm font-semibold text-ink">
+                <div key={item.label} className="flex items-baseline gap-4">
+                  <dt className="w-20 shrink-0 text-sm font-semibold text-ink">
                     {item.label}
                   </dt>
-                  <dd className="mt-1 text-base text-muted">
+                  <dd className="text-base text-muted">
                     {item.href ? (
                       <a
                         href={item.href}
@@ -78,7 +78,7 @@ export default function ContactForm() {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="transition-colors hover:text-accent"
+                        className="transition-colors hover:text-ink"
                       >
                         {item.value}
                       </a>
@@ -95,7 +95,7 @@ export default function ContactForm() {
           <Reveal delay={0.1}>
             <form
               onSubmit={handleSubmit}
-              className="rounded-ultra border border-line bg-surface p-7 shadow-soft sm:p-9"
+              className="rounded-ultra border border-line bg-white p-7 shadow-soft sm:p-10"
             >
               <div className="space-y-5">
                 <div>
@@ -172,7 +172,7 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-btn bg-accent px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-200 hover:scale-[1.02] hover:bg-accent-hover sm:w-auto"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-ink px-7 py-3 text-sm font-semibold text-canvas transition-all duration-200 hover:scale-[1.02] hover:opacity-80 sm:w-auto"
                 >
                   Send enquiry
                 </button>

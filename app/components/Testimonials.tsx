@@ -39,7 +39,7 @@ function Avatar({ name }: { name: string }) {
   return (
     <span
       aria-hidden="true"
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-soft text-sm font-semibold text-accent"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-sm font-semibold text-canvas"
     >
       {initials}
     </span>
@@ -48,29 +48,28 @@ function Avatar({ name }: { name: string }) {
 
 export default function Testimonials() {
   return (
-    <Section className="bg-surface">
+    <Section className="bg-canvas">
       <Reveal className="max-w-2xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
           Clients &amp; collaborations
         </p>
-        <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
+        <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
           Trusted on detail, timing, and budget.
         </h2>
         <p className="mt-4 text-[1.0625rem] leading-[1.6] text-muted">
-          Clients tell us the same things — attention to detail, clear
-          communication, and delivery on time. Here are a few we&apos;ve worked
-          with.
+          Attention to detail, clear communication, and delivery on time.
+          Here are a few we&apos;ve worked with.
         </p>
       </Reveal>
 
-      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0 lg:grid-cols-4">
+      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:pb-0 lg:grid-cols-4">
         {CLIENTS.map((item, i) => (
           <Reveal
             key={item.name}
-            delay={i * 0.1}
+            delay={i * 0.08}
             className="min-w-[82%] snap-center sm:min-w-[60%] md:min-w-0"
           >
-            <figure className="flex h-full flex-col justify-between rounded-card border border-line bg-canvas p-7 shadow-soft">
+            <figure className="flex h-full flex-col justify-between rounded-card border border-line bg-white p-7 shadow-soft transition-shadow duration-200 hover:shadow-lift">
               <p className="text-[1.0625rem] leading-[1.6] text-ink">
                 {item.note}
               </p>

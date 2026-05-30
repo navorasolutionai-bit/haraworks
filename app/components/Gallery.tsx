@@ -35,17 +35,16 @@ export default function Gallery() {
   }, [active, query]);
 
   return (
-    <Section id="gallery">
+    <Section id="gallery" className="bg-surface">
       <Reveal className="max-w-2xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-          Portfolio gallery
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          Portfolio
         </p>
-        <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
-          Straight from our Instagram.
+        <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
+          Our work, live from Instagram.
         </h2>
         <p className="mt-4 text-[1.0625rem] leading-[1.6] text-muted">
-          Every project, embedded live — videos play and carousels swipe right
-          here. Filter by type or search for a project.
+          Every project embedded live — videos play, carousels swipe. Filter by type or search.
         </p>
       </Reveal>
 
@@ -60,10 +59,10 @@ export default function Gallery() {
                 type="button"
                 onClick={() => setActive(category)}
                 aria-pressed={isActive}
-                className={`min-h-[40px] rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`min-h-[36px] rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "border-accent bg-accent text-white"
-                    : "border-line bg-surface text-muted hover:border-accent/40 hover:text-ink"
+                    ? "border-ink bg-ink text-canvas"
+                    : "border-[rgba(0,0,0,0.15)] bg-white text-muted hover:border-ink hover:text-ink"
                 }`}
               >
                 {category}
@@ -79,14 +78,14 @@ export default function Gallery() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search projects…"
-            className="w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none"
+            className="w-full rounded-full border border-[rgba(0,0,0,0.15)] bg-white px-5 py-2.5 text-sm text-ink placeholder:text-muted focus:border-ink focus:outline-none"
           />
         </label>
       </div>
 
       {/* Masonry grid */}
       {filtered.length > 0 ? (
-        <div className="mt-10 gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">
+        <div className="mt-12 gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">
           {filtered.map((post) => (
             <div key={post.id} className="mb-6 break-inside-avoid">
               <InstagramEmbed url={post.url} />
@@ -95,7 +94,7 @@ export default function Gallery() {
                   <h3 className="font-display text-base font-semibold tracking-tight text-ink">
                     {post.title}
                   </h3>
-                  <span className="shrink-0 rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
+                  <span className="shrink-0 rounded-full border border-[rgba(0,0,0,0.12)] px-2.5 py-1 text-xs font-medium text-muted">
                     {post.type}
                   </span>
                 </div>
@@ -113,7 +112,7 @@ export default function Gallery() {
                   href={post.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm font-medium text-accent underline-offset-4 hover:underline"
+                  className="mt-2 inline-block text-sm font-medium text-ink underline-offset-4 hover:underline"
                 >
                   View on Instagram →
                 </a>

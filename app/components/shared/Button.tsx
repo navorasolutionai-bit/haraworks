@@ -16,9 +16,9 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white shadow-soft hover:bg-accent-hover hover:shadow-lift",
+    "bg-ink text-canvas shadow-soft hover:bg-accent-hover hover:shadow-lift",
   ghost:
-    "bg-surface text-ink border border-line hover:border-accent/40 hover:text-accent",
+    "bg-transparent text-ink border border-[rgba(0,0,0,0.2)] hover:border-ink hover:bg-ink hover:text-canvas",
 };
 
 export default function Button({

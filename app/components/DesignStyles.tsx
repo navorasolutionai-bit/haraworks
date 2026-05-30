@@ -47,12 +47,12 @@ const STYLES: {
 
 export default function DesignStyles() {
   return (
-    <Section id="styles">
+    <Section id="styles" className="bg-surface">
       <Reveal className="max-w-2xl">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
           Design styles
         </p>
-        <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
+        <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
           Six aesthetics, one studio.
         </h2>
         <p className="mt-4 text-[1.0625rem] leading-[1.6] text-muted">
@@ -61,10 +61,10 @@ export default function DesignStyles() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
         {STYLES.map((style, i) => (
           <Reveal key={style.name} delay={(i % 2) * 0.08}>
-            <div className="flex h-full flex-col rounded-card border border-line bg-surface p-7 shadow-soft">
+            <div className="flex h-full flex-col rounded-card border border-line bg-white p-7 shadow-soft transition-shadow duration-200 hover:shadow-lift">
               <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
                 {style.name}
               </h3>
@@ -81,7 +81,7 @@ export default function DesignStyles() {
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block rounded-full border border-line bg-canvas px-3 py-1.5 text-sm text-muted transition-colors hover:border-accent/40 hover:text-accent"
+                        className="inline-block rounded-full border border-[rgba(0,0,0,0.15)] bg-white px-3 py-1.5 text-sm text-muted transition-colors hover:border-ink hover:text-ink"
                       >
                         {post.title}
                       </a>
@@ -99,7 +99,7 @@ export default function DesignStyles() {
           See every project in the{" "}
           <a
             href="#gallery"
-            className="font-medium text-accent underline-offset-4 hover:underline"
+            className="font-medium text-ink underline-offset-4 hover:underline"
           >
             portfolio gallery
           </a>

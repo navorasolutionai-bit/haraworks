@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette */
-  --color-canvas: #f9fafb;
-  --color-surface: #ffffff;
-  --color-ink: #18181b;
-  --color-muted: #71717a;
-  --color-line: rgba(226, 232, 240, 0.6);
+  /* Palette — black & white, white-dominant */
+  --color-canvas: #ffffff;
+  --color-surface: #fafafa;
+  --color-ink: #0a0a0a;
+  --color-muted: #6e6e73;
+  --color-line: rgba(0, 0, 0, 0.09);
 
-  /* Accent — warm clay */
-  --color-accent: #92663b;
-  --color-accent-hover: #7e562f;
-  --color-accent-soft: rgba(146, 102, 59, 0.1);
+  /* Accent — pure black (Apple style) */
+  --color-accent: #0a0a0a;
+  --color-accent-hover: #1d1d1f;
+  --color-accent-soft: rgba(0, 0, 0, 0.06);
+
+  /* Inverse — for dark panels */
+  --color-ink-inverse: #f5f5f7;
+  --color-muted-inverse: rgba(245, 245, 247, 0.55);
+  --color-line-inverse: rgba(255, 255, 255, 0.1);
 
   /* Typography */
   --font-display: "SF Pro Display", "Inter", system-ui, -apple-system,
@@ -21,17 +26,17 @@
 
   /* Radii */
   --radius-input: 8px;
-  --radius-btn: 12px;
-  --radius-card: 16px;
-  --radius-ultra: 24px;
+  --radius-btn: 980px;
+  --radius-card: 18px;
+  --radius-ultra: 28px;
 }
 
 @layer base {
   :root {
     --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04),
-      0 8px 24px rgba(0, 0, 0, 0.05);
-    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.04),
-      0 18px 48px rgba(0, 0, 0, 0.09);
+      0 8px 24px rgba(0, 0, 0, 0.06);
+    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.05),
+      0 20px 56px rgba(0, 0, 0, 0.12);
   }
 
   html {
@@ -50,13 +55,13 @@
   }
 
   ::selection {
-    background-color: var(--color-accent-soft);
-    color: var(--color-ink);
+    background-color: var(--color-ink);
+    color: var(--color-canvas);
   }
 
   /* Visible focus rings for keyboard users only */
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-ink);
     outline-offset: 3px;
     border-radius: 4px;
   }

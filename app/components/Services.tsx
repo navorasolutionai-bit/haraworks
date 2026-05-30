@@ -37,23 +37,23 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <Section id="services" className="bg-surface">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+    <Section id="services" className="bg-canvas">
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Left — service list */}
         <div>
           <Reveal>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               What we do
             </p>
-            <h2 className="mt-4 font-display text-[clamp(1.875rem,4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight text-ink">
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
               Six ways to work together.
             </h2>
           </Reveal>
 
-          <div className="mt-10">
+          <div className="mt-12">
             {SERVICES.map((service, i) => (
-              <Reveal key={service.title} delay={i * 0.1}>
-                <div className="border-t border-line py-7">
+              <Reveal key={service.title} delay={i * 0.08}>
+                <div className="group border-t border-line py-7 transition-colors duration-200 hover:border-ink">
                   <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
                     {service.title}
                   </h3>
@@ -66,18 +66,18 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Right — value panel */}
+        {/* Right — value panel (black card) */}
         <Reveal className="lg:sticky lg:top-28 lg:self-start">
-          <div className="flex h-full flex-col justify-between rounded-ultra bg-accent-soft p-8 sm:p-10">
+          <div className="flex h-full flex-col justify-between rounded-ultra bg-ink p-8 sm:p-10">
             <div>
-              <p className="font-display text-2xl font-semibold leading-snug tracking-tight text-ink">
+              <p className="font-display text-2xl font-bold leading-snug tracking-[-0.02em] text-[#f5f5f7]">
                 One studio, end to end — from the first sketch to the final
                 handover.
               </p>
-              <p className="mt-4 text-base leading-[1.6] text-muted">
+              <p className="mt-5 text-base leading-[1.65] text-[rgba(245,245,247,0.55)]">
                 Every project is managed in-house: design, materials,
-                contractors, and quality checks. You get one point of contact and
-                a clear timeline and budget from day one.
+                contractors, and quality checks. One point of contact, a clear
+                timeline, and a fixed budget from day one.
               </p>
             </div>
 
@@ -87,9 +87,9 @@ export default function Services() {
                 "No-obligation quotation",
                 "On time, on budget",
               ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-base text-ink">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-white">
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <li key={item} className="flex items-center gap-3 text-base text-[#f5f5f7]">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[rgba(255,255,255,0.25)]">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M2.5 6.5l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
@@ -99,7 +99,12 @@ export default function Services() {
             </ul>
 
             <div className="mt-8">
-              <Button href="#contact">Request a quotation</Button>
+              <a
+                href="#contact"
+                className="inline-flex min-h-[44px] items-center rounded-full border border-[rgba(255,255,255,0.25)] px-6 py-3 text-sm font-medium text-[#f5f5f7] transition-all duration-200 hover:border-white hover:bg-white hover:text-ink"
+              >
+                Request a quotation
+              </a>
             </div>
           </div>
         </Reveal>
