@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 declare global {
   interface Window {
@@ -55,6 +55,8 @@ export default function InstagramEmbed({
   className = "",
 }: InstagramEmbedProps) {
   const ref = useRef<HTMLQuoteElement>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -66,6 +68,27 @@ export default function InstagramEmbed({
     return () => {
       active = false;
     };
+  }, [url]);
+
+  // Instagram's embed.js injects an <iframe> once the post is ready. Watch for
+  // it so we can fade the skeleton out the moment real content appears.
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+
+    if (frame.querySelector("iframe")) {
+      setLoaded(true);
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (frame.querySelector("iframe")) {
+        setLoaded(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(frame, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [url]);
 
   return (
@@ -86,7 +109,20 @@ export default function InstagramEmbed({
         </div>
       )}
 
-      <div className="overflow-hidden rounded-card border border-line bg-surface shadow-soft">
+      <div
+        ref={frameRef}
+        className="relative overflow-hidden rounded-card border border-line bg-surface shadow-soft transition-shadow duration-300 group-hover:shadow-lift"
+      >
+        {/* Skeleton placeholder — fades out once the IG iframe is injected */}
+        <div
+          aria-hidden="true"
+          className={`skeleton-shimmer pointer-events-none absolute inset-0 z-10 min-h-[420px] transition-opacity duration-500 ${
+            loaded ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <div className="skeleton-shimmer-bar" />
+        </div>
+
         <blockquote
           ref={ref}
           className="instagram-media"

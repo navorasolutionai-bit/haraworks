@@ -59,7 +59,7 @@ export default function Gallery() {
                 type="button"
                 onClick={() => setActive(category)}
                 aria-pressed={isActive}
-                className={`min-h-[36px] rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
+                className={`flex min-h-[44px] items-center rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "border-ink bg-ink text-canvas"
                     : "border-[rgba(0,0,0,0.15)] bg-white text-muted hover:border-ink hover:text-ink"
@@ -86,38 +86,45 @@ export default function Gallery() {
       {/* Masonry grid */}
       {filtered.length > 0 ? (
         <div className="mt-12 gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">
-          {filtered.map((post) => (
-            <div key={post.id} className="mb-6 break-inside-avoid">
-              <InstagramEmbed url={post.url} />
-              <div className="mt-3 px-1">
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-display text-base font-semibold tracking-tight text-ink">
-                    {post.title}
-                  </h3>
-                  <span className="shrink-0 rounded-full border border-[rgba(0,0,0,0.12)] px-2.5 py-1 text-xs font-medium text-muted">
-                    {post.type}
-                  </span>
-                </div>
-                <p className="mt-1 text-sm text-muted">
-                  {post.category}
-                  {post.location ? ` · ${post.location}` : ""} · {post.date}
-                </p>
-                {post.collab && (
+          {filtered.map((post, i) => (
+            <Reveal
+              key={post.id}
+              delay={Math.min(i, 5) * 0.06}
+              y={24}
+              className="mb-6 break-inside-avoid"
+            >
+              <div className="group transition-transform duration-300 ease-out hover:-translate-y-1">
+                <InstagramEmbed url={post.url} />
+                <div className="mt-3 px-1">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="font-display text-base font-semibold tracking-tight text-ink">
+                      {post.title}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-[rgba(0,0,0,0.12)] px-2.5 py-1 text-xs font-medium text-muted">
+                      {post.type}
+                    </span>
+                  </div>
                   <p className="mt-1 text-sm text-muted">
-                    With{" "}
-                    <span className="text-ink">{post.collab}</span>
+                    {post.category}
+                    {post.location ? ` · ${post.location}` : ""} · {post.date}
                   </p>
-                )}
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm font-medium text-ink underline-offset-4 hover:underline"
-                >
-                  View on Instagram →
-                </a>
+                  {post.collab && (
+                    <p className="mt-1 text-sm text-muted">
+                      With{" "}
+                      <span className="text-ink">{post.collab}</span>
+                    </p>
+                  )}
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-sm font-medium text-ink underline-offset-4 hover:underline"
+                  >
+                    View on Instagram →
+                  </a>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       ) : (
